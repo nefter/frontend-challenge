@@ -1,16 +1,24 @@
 import { apitoken, apispace, apienv, apicontenttype } from '../env.js';
-const getAPIUrl = (action) => `https://api.contentful.com/spaces/${apispace}/environments/${apienv}/entries${fillstring}`;
+const getAPIUrl = (action) => `https://api.contentful.com/spaces/${apispace}/environments/${apienv}/entries?content_type=${apicontenttype}`;
 
-let fillstring = "";
+// let fillstring = "";
 
 // ${action}/${apicontenttype}
 
 class AudioBooks {
 
-    get({id, title}) {
-        // afillstring += `&${apicontenttype}`;
-        console.log(fetch(getAPIUrl))
-        
+    get({id, title} = { id:'', title:''}) {
+
+        const myHeaders = new Headers();
+        myHeaders.append("Authorization", `Bearer ${apitoken}`);
+
+        const requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+            };
+
+            return fetch(getAPIUrl(), requestOptions)    
     }
     add(audiobook) {
         return;
@@ -20,4 +28,4 @@ class AudioBooks {
     }
 };
 
-export default AudioBooks;
+export default new AudioBooks();
