@@ -1,0 +1,32 @@
+.modal{
+    display:block;
+    position:fixed;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+    .modal-overlay {
+      background-color: rgba(0,0,0,.3);
+      position:absolute;
+      display: block;
+      top:0px;
+      left:0px;
+      bottom:0px;
+      right:0px;
+    }
+    .modal-box {
+      position: relative;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      width: 50%;
+      .modal-header{
+        display:flex;
+        align-items: center;
+      }
+    //   .modal-content{
+
+    //   }
+    }
+  }

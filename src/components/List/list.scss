@@ -1,0 +1,25 @@
+.audiobooks{
+    display:flex;
+    flex-wrap: wrap;
+    .card {
+        width:240px;
+        height:400px;
+        display: flex;
+        .card-body {
+            display: flex;
+            flex-flow: column;
+         }
+        .card-title { }
+        .card-subtitle {}
+        .card-text {}
+        .cover {
+            display:block;
+            width:100%;
+            img {
+                
+                width:100px;
+            }
+        }
+    }
+
+}
