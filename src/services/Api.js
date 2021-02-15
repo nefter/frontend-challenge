@@ -1,30 +1,74 @@
 import { apitoken, apispace, apienv, apicontenttype } from '../env.js';
-const getAPIUrl = (action) => `https://api.contentful.com/spaces/${apispace}/environments/${apienv}/entries?content_type=${apicontenttype}`;
 
-// let fillstring = "";
-
-// ${action}/${apicontenttype}
+const getAPIUrl = (params, url) => {
+    
+    return `https://api.contentful.com/spaces/${apispace}/environments/${apienv}/entries${
+        url ? `/` + url.join('/') : ''
+    }${
+        params ? params : ''
+    }`;
+}
 
 class AudioBooks {
 
     get({id, title} = { id:'', title:''}) {
 
-        const myHeaders = new Headers();
-        myHeaders.append("Authorization", `Bearer ${apitoken}`);
+        const headers = new Headers();
+        headers.append("Authorization", `Bearer ${apitoken}`);
 
         const requestOptions = {
             method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
+            headers: headers
             };
 
-            return fetch(getAPIUrl(), requestOptions)    
+            return fetch(getAPIUrl(`?content_type=${apicontenttype}`), requestOptions)    
     }
-    add(audiobook) {
-        return;
+    create(audiobook) {
+
+        const headers = new Headers();
+            headers.append("X-Contentful-Content-Type", "audiocontent-v6");
+            headers.append("X-Contentful-Version", "1");
+            headers.append("Authorization", `Bearer ${apitoken}`);
+            headers.append("Content-Type", "application/json");
+
+            const raw = JSON.stringify({"fields": audiobook});
+
+            const requestOptions = {
+            method: 'POST',
+            headers: headers,
+            body: raw
+            };
+
+        return fetch(getAPIUrl(), requestOptions)
     }
-    update(audiobook) {
-        return;
+    update(audiobook, id) {
+        const headers = new Headers();
+        headers.append("X-Contentful-Content-Type", "audiocontent-v6");
+        headers.append("X-Contentful-Version", "1");
+        headers.append("Authorization", `Bearer ${apitoken}`);
+        headers.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({"fields": audiobook});
+
+        const requestOptions = {
+            method: 'PUT',
+            headers: headers,
+            body: raw
+        };
+
+        return fetch(getAPIUrl(null, [id]), requestOptions)
+    }
+
+    delete(id) {
+        const headers = new Headers();
+        headers.append("Authorization", `Bearer ${apitoken}`);
+
+        const requestOptions = {
+            method: 'DELETE',
+            headers: headers,
+            redirect: 'follow'
+        };
+        return fetch(getAPIUrl(null, [id]), requestOptions)
     }
 };
 

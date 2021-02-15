@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-
+import "./search.scss"
 const Search = ({list, filter, onUpdate}) => {
     const input = useRef(null);
     const [ query, setQuery ] = useState(null);
