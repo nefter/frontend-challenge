@@ -26,24 +26,24 @@ class AudioBooks {
     create(audiobook) {
 
         const headers = new Headers();
-            headers.append("X-Contentful-Content-Type", "audiocontent-v6");
-            headers.append("X-Contentful-Version", "1");
-            headers.append("Authorization", `Bearer ${apitoken}`);
-            headers.append("Content-Type", "application/json");
+        headers.append("X-Contentful-Content-Type", apicontenttype);
+        headers.append("X-Contentful-Version", "1");
+        headers.append("Authorization", `Bearer ${apitoken}`);
+        headers.append("Content-Type", "application/json");
 
             const raw = JSON.stringify({"fields": audiobook});
 
             const requestOptions = {
-            method: 'POST',
-            headers: headers,
-            body: raw
+                method: 'POST',
+                headers: headers,
+                body: raw
             };
 
         return fetch(getAPIUrl(), requestOptions)
     }
     update(audiobook, id) {
         const headers = new Headers();
-        headers.append("X-Contentful-Content-Type", "audiocontent-v6");
+        headers.append("X-Contentful-Content-Type", apicontenttype);
         headers.append("X-Contentful-Version", "1");
         headers.append("Authorization", `Bearer ${apitoken}`);
         headers.append("Content-Type", "application/json");
