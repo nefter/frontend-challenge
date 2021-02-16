@@ -34,6 +34,7 @@
  }
 .card-title {
     font-size: medium;
+    font-weight: bold;
 }
 .card-subtitle {
     font-size: medium;
@@ -48,28 +49,3 @@
         width:100px;
     }
 }
-/* .audiobooks{
-    display:flex;
-    flex-wrap: wrap;
-    .card {
-        // width:17vw;
-        height:400px;
-        display: flex;
-        .card-body {
-            display: flex;
-            flex-flow: column;
-         }
-        .card-title { }
-        .card-subtitle {}
-        .card-text {}
-        .cover {
-            display:block;
-            width:100%;
-            img {
-                
-                width:100px;
-            }
-        }
-    }
-}
- */

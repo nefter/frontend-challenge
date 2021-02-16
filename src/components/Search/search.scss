@@ -30,15 +30,27 @@
                     .cover {
                         display:flex;
                         align-items: center;
+                        max-width: 80px!important;
                         img {
-                            height:60px;
+                            height:auto;
+                            width: 70px;
+                            margin: 1px;
                         }
                     }
                     .details {
                         display:flex;
                         flex-flow: column;
+                        justify-content: center;
                         .title{ 
                             font-weight: bold;
+                            color: black;
+                            font-size: small;
+                        }
+                        .author{
+                            font-size: smaller;
+                        }
+                        .narrator {
+                            font-size: smaller;
                         }
                     }
                 }
