@@ -4,7 +4,7 @@ const Search = ({list, filter, onUpdate}) => {
     const input = useRef(null);
     const [ query, setQuery ] = useState(null);
     const [ displayAutocompleter, setDisplayAutocompleter ] = useState();
-    const [ autoacompleterList, setAutoacompleterList ] = useState([]);
+    const [ autocompleterList, setAutoacompleterList ] = useState([]);
     const [ selectedFieldFilter, setSelectedFieldFilter ] = useState('title');
 
     const updateQuery = (evt) => {
@@ -49,7 +49,7 @@ const Search = ({list, filter, onUpdate}) => {
                     <div className="autoacompleter">
                         <ul>
                             {
-                                autoacompleterList.map( (item, idx) => ( 
+                                autocompleterList.map( (item, idx) => ( 
                                     <li key={idx} onClick={() => selectAutocompleteItem(item)}>
                                         <div className="cover">
                                             <img alt="cover" src={item.fields.cover['es-MX']}/>
