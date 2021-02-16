@@ -1,8 +1,42 @@
-.audiobooks{
+@media (max-width: 600px) {
+    .card {
+        width: 100vw;
+        min-width: 300px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 960px) {
+    .card {
+        width: 47vw;
+    }
+}
+
+@media (min-width: 961px) {
+    .card {
+        width: 17vw;
+        min-width: 300px;
+    }
+}
+
+.audiobooks {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cover {
+    display:block;
+    width:100%;
+    img {
+        
+        width:100px;
+    }
+}
+
+/* .audiobooks{
     display:flex;
     flex-wrap: wrap;
     .card {
-        width:240px;
+        // width:17vw;
         height:400px;
         display: flex;
         .card-body {
@@ -21,5 +55,5 @@
             }
         }
     }
-
 }
+ */
