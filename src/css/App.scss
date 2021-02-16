@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 :root {
-//   --d: 700ms;
-//   --e: cubic-bezier(0.2, 1, 0.15, 1);
 --font-sans: "Nunito";
+  margin: 0px;
+  padding: 0px;
 }
 
 @media (max-width: 600px) {
@@ -20,7 +20,6 @@
 @media (min-width: 961px) {
   .page-content {
     background-color:rgba(240,248,255,0.8);
-
 }
 }
 
@@ -32,10 +31,6 @@ html, body {
   height: 100vh;
 }
 
-.root {
-  margin: 0px;
-  padding: 0px;
-}
 .page-content{
   display:block;
   // padding: 1rem;
@@ -56,15 +51,14 @@ html, body {
   background: linear-gradient(
     to top,
     rgba(0,0,13,0.85), 
-    rgba(0,0,13,1)
-  );
+    rgba(0,0,13,1) 
+    );
   display: flex;
   align-items: center;
   justify-content: center;
 
   .search-box{
     margin:0 10px 0 10px;
-
   }
 }
 

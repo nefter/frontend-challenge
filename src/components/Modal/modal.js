@@ -9,7 +9,7 @@ const Modal = ({modalStatus, onModalClose, children}) => {
                     <div className="modal-header">
                         <button onClick={() => onModalClose(false) }>x</button>
                     </div>
-                    <div className="modalContent">
+                    <div className="modal-content">
                         { children }
                     </div>
             </div>

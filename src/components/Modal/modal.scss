@@ -1,3 +1,7 @@
+/* @media (max-width: 640px) {
+  
+} */
+
 .modal{
     display:block;
     position:fixed;
@@ -24,9 +28,21 @@
       .modal-header{
         display:flex;
         align-items: center;
+        background: linear-gradient(
+        to top,
+        rgba(0,0,13,0.85), 
+        rgba(0,0,13,1) 
+        );
+        max-height: 36px;
       }
-    //   .modal-content{
-
-    //   }
+      .modal-content{
+        max-width: 50vw;
+        margin: auto;
+        padding: 15px 25px 0 25px;
+        font-size: medium;
+        *{
+          padding: 0 10px 0 10px;
+        }
+      }
     }
   }
